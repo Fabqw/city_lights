@@ -23,6 +23,7 @@ class RegisterScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  Image.asset("assets/images/logo_city.png", height: 200),
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
@@ -34,7 +35,6 @@ class RegisterScreen extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        //Image.asset("assets/images/logo_city.png", height: 150),
                         const Text(
                           "Unirse a City Lights",
                           style: TextStyle(
@@ -141,6 +141,29 @@ class RegisterScreen extends StatelessWidget {
                             ),
                             child: const Text(
                               "Registrarse",
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        SizedBox(
+                          width: double.infinity,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/verify_code');
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: AppColors.accent,
+                              padding: const EdgeInsets.symmetric(vertical: 15),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            child: const Text(
+                              "Verificar Registro",
                               style: TextStyle(
                                 fontSize: 20,
                                 color: Colors.white,

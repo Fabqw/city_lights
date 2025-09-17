@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:city_lights/screens/auth/register_screen.dart';
 import 'package:city_lights/core/app_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -23,12 +22,10 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 1.0),
-                    child: Image.asset(
-                      "assets/images/logo_city.png",
-                      height: 200,
-                    ),
+                  Image.asset(
+                    "assets/images/logo_city.png",
+                    height: 200,
+                    fit: BoxFit.contain,
                   ),
                   Container(
                     padding: const EdgeInsets.all(20),
@@ -52,7 +49,7 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(height: 10),
                         TextFormField(
                           decoration: InputDecoration(
-                            hintText: "Correo electronico",
+                            hintText: "Correo Electronico",
                             hintStyle: const TextStyle(color: Colors.white70),
                             filled: true,
                             fillColor: Colors.white.withValues(alpha: 0.1),
@@ -94,7 +91,9 @@ class LoginScreen extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/dashboard');
+                            },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: AppColors.accent,
                               padding: const EdgeInsets.symmetric(vertical: 15),
@@ -115,9 +114,11 @@ class LoginScreen extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/reset_password');
+                            },
                             child: const Text(
-                              "¿Olvidaste tu contraseña?",
+                              "¿Olvidaste Tu Contraseña?",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
@@ -128,7 +129,7 @@ class LoginScreen extends StatelessWidget {
                           ),
                         ),
                         const Text(
-                          "O continuar con: ",
+                          "O continuar Con: ",
                           style: TextStyle(color: Colors.white70, fontSize: 18),
                         ),
                         const SizedBox(height: 10),
@@ -145,7 +146,7 @@ class LoginScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             const Text(
-                              "¿No tienes una cuenta? ",
+                              "¿No Tienes Una Cuenta? ",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
